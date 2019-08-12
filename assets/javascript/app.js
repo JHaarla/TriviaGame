@@ -33,7 +33,10 @@ window.onload = function () {
         $("#instructionsBtnDiv").html("");
         $("#startBtnDiv").html("");
         $("#mainContentDiv").load("form.html");
+        startTimer();
     }
+
+    
 
 
 
