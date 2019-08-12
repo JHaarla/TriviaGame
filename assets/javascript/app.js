@@ -7,16 +7,20 @@ window.onload = function () {
 
 
     // timer stuff
+    var time = 100;
+    var clockRunning = false;
 
+    function startTimer() {
+        if (!clockRunning) {
+            clockRunning = true;
+            myInterval = setInterval(count, 1000)
+        }
+    } 
 
-    // instructions modal pop-up
-    $("#instructions").on("click", instPop);
-
-    function instPop () {
-
-
+    function count() {
+        time -= 1;
+        $("#timerDiv").text(time);
     }
-
 
 
     // this will run the startGame function (the meat of this project) when the start button is clicked. 
@@ -25,8 +29,10 @@ window.onload = function () {
     function startGame() {
 
         console.log("start game");
-
-
+        $("#mainContentDiv").html("");
+        $("#instructionsBtnDiv").html("");
+        $("#startBtnDiv").html("");
+        $("#mainContentDiv").load("form.html");
     }
 
 
