@@ -14,7 +14,7 @@ window.onload = function () {
 
     function instPop () {
 
-        
+
     }
 
 
@@ -31,7 +31,21 @@ window.onload = function () {
 
 
 
-
+    // Modal functionality for the instructions button 
+    var modal = document.getElementById("instModal");
+    var modalBtn = document.getElementById("instructionsBtn");
+    var span = document.getElementsByClassName("close")[0];
+    modalBtn.onclick = function() {
+        modal.style.display = "block";
+    }
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+    window.onclick = function(event) {
+        if (event.target == modal) {
+        modal.style.display = "none";
+        }
+    }
 
 
 
