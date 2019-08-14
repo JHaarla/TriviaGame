@@ -5,23 +5,23 @@ window.onload = function () {
 
     var correctAnswers = 0;
     var incorrectAnswers = 0;
-    var notAnswered;
+    var notAnswered = 0;
     // var startGame;
 
     // user selections
-    var q1Ans = "empty";
-    var q2Ans = "empty";
-    var q3Ans = "empty";
-    var q4Ans = "empty";
-    var q5Ans = "empty";
-    var q6Ans = "empty";
-    var q7Ans = "empty";
-    var q8Ans = "empty";
-    var q9Ans = "empty";
-    var q10Ans = "empty";
+    var q1Ans;
+    var q2Ans;
+    var q3Ans;
+    var q4Ans;
+    var q5Ans;
+    var q6Ans;
+    var q7Ans;
+    var q8Ans;
+    var q9Ans;
+    var q10Ans;
 
     // timer stuff
-    var time = 30;
+    var time = 90;
     var clockRunning = false;
     var outOfTime = false;
     var myTimer;
@@ -29,11 +29,11 @@ window.onload = function () {
     function startTimer() {
             clockRunning = true;
             myTimer = setInterval(count, 1000);
-            console.log(clockRunning);
+            console.log("clockRunning: " + clockRunning);
         } ;  
     
 
-console.log("oot: " + outOfTime);
+    console.log("oot: " + outOfTime);
     // function startTimer() {
     //     if (!clockRunning) {
     //         clockRunning = true;
@@ -46,17 +46,18 @@ console.log("oot: " + outOfTime);
     function stopTimer() {
         clearInterval(myTimer);
         clockRunning = false;
+        console.log("clockRUnning: " + clockRunning);
     }
 
     function count() {
         time -= 1;
         $("#timerDiv").text(time);
-        console.log(time);
+        // console.log(time);
         if (time === 0) {
             outOfTime = true;
             clearInterval(myTimer);
             clockRunning = false;
-            console.log(clockRunning);
+            console.log("clockRunning: " + clockRunning);
             console.log("oot: " + outOfTime);
             alert("You ran out of time...")
     }};
@@ -119,6 +120,97 @@ console.log("oot: " + outOfTime);
         console.log("q8: " + q8Ans);
         console.log("q9: " + q9Ans);
         console.log("q10: " + q10Ans);
+
+        // hide questions & timer
+        $("#questionsDiv").hide();
+        $("#timerDiv").text("");
+        console.log("time left: " + time);
+
+        if (q1Ans === "3") {
+            correctAnswers += 1;
+        } else if (q1Ans === undefined) {
+            notAnswered += 1;
+        } else {
+            incorrectAnswers += 1;
+        }
+
+        if (q2Ans === "Laugh") {
+            correctAnswers += 1;
+        } else if (q2Ans === undefined) {
+            notAnswered += 1;
+        } else {
+            incorrectAnswers += 1;
+        }
+
+        if (q3Ans === "Subway") {
+            correctAnswers += 1;
+        } else if (q3Ans === undefined) {
+            notAnswered += 1;
+        } else {
+            incorrectAnswers += 1;
+        }
+
+        if (q4Ans === "6 million") {
+            correctAnswers += 1;
+        } else if (q4Ans === undefined) {
+            notAnswered += 1;
+        } else {
+            incorrectAnswers += 1;
+        }
+
+        if (q5Ans === "Unicorn") {
+            correctAnswers += 1;
+        } else if (q5Ans === undefined) {
+            notAnswered += 1;
+        } else {
+            incorrectAnswers += 1;
+        }
+
+        if (q6Ans === "Mob") {
+            correctAnswers += 1;
+        } else if (q6Ans === undefined) {
+            notAnswered += 1;
+        } else {
+            incorrectAnswers += 1;
+        }
+
+        if (q7Ans === "United States") {
+            correctAnswers += 1;
+        } else if (q7Ans === undefined) {
+            notAnswered += 1;
+        } else {
+            incorrectAnswers += 1;
+        }
+
+        if (q8Ans === "Thousands") {
+            correctAnswers += 1;
+        } else if (q8Ans === undefined) {
+            notAnswered += 1;
+        } else {
+            incorrectAnswers += 1;
+        }
+
+        if (q9Ans === "Meerkats") {
+            correctAnswers += 1;
+        } else if (q9Ans === undefined) {
+            notAnswered += 1;
+        } else {
+            incorrectAnswers += 1;
+        }
+
+        if (q10Ans === "A prison") {
+            correctAnswers += 1;
+        } else if (q10Ans === undefined) {
+            notAnswered += 1;
+        } else {
+            incorrectAnswers += 1;
+        }
+
+
+
+        console.log("correct: " + correctAnswers);
+        console.log("incorrect: " + incorrectAnswers);
+        console.log("not answered: " + notAnswered);
 
     }
 
