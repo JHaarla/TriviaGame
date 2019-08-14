@@ -22,6 +22,9 @@ window.onload = function () {
         $("#timerDiv").text(time);
     }
 
+    // This will hide the questions section until the Start button is clicked
+    $("#questionsDiv").hide();
+
 
     // this will run the startGame function (the meat of this project) when the start button is clicked. 
     $("#startBtn").on("click", startGame);
@@ -32,11 +35,13 @@ window.onload = function () {
         $("#mainContentDiv").html("");
         $("#instructionsBtnDiv").html("");
         $("#startBtnDiv").html("");
-        $("#mainContentDiv").load("form.html");
+        // $("#mainContentDiv").load("form.html");
+        $("#questionsDiv").show(1000);
+
         startTimer();
     }
 
-    
+
 
 
 
