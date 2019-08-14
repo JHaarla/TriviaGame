@@ -21,7 +21,7 @@ window.onload = function () {
     var q10Ans;
 
     // timer stuff
-    var time = 90;
+    var time = 10;
     var clockRunning = false;
     var outOfTime = false;
     var myTimer;
@@ -59,7 +59,8 @@ window.onload = function () {
             clockRunning = false;
             console.log("clockRunning: " + clockRunning);
             console.log("oot: " + outOfTime);
-            alert("You ran out of time...")
+            // alert("You ran out of time...")
+            getAnswers();
     }};
 
 
