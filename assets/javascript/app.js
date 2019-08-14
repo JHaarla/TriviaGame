@@ -81,9 +81,12 @@ window.onload = function () {
     function startGame() {
 
         console.log("start game");
-        $("#mainContentDiv").html("");
-        $("#instructionsBtnDiv").html("");
-        $("#startBtnDiv").html("");
+        // $("#mainContentDiv").html("");
+        $("#imageDiv").hide(1000);
+        $("#instructionsBtnDiv").hide(1000);
+        // $("#instructionsBtnDiv").html("");
+
+        $("#startBtnDiv").hide(1000);
         // $("#mainContentDiv").load("form.html");
         $("#questionsDiv").show(1000);
 
@@ -213,19 +216,19 @@ window.onload = function () {
         console.log("not answered: " + notAnswered);
 
         var correct = $("<div>");
-        correct.addClass("correct").text("Correct Answers: " + correctAnswers);
+        correct.addClass("results").text("Correct Answers: " + correctAnswers);
         $("#mainContentDiv").append(correct);
 
         var incorrect = $("<div>");
-        incorrect.addClass("incorrect").text("Incorrect Answers: " + incorrectAnswers);
+        incorrect.addClass("results").text("Incorrect Answers: " + incorrectAnswers);
         $("#mainContentDiv").append(incorrect);
 
         var unAns = $("<div>");
-        unAns.addClass("incorrect").text("Unanswered: " + notAnswered);
+        unAns.addClass("results").text("Unanswered: " + notAnswered);
         $("#mainContentDiv").append(unAns);
 
         var timeLeft = $("<div>");
-        timeLeft.addClass("timeleft").text("You had " + time + " seconds left! Great job!");
+        timeLeft.addClass("results").text("You had " + time + " seconds left! Great job!");
         $("#mainContentDiv").append(timeLeft);
 
         $("#playAgainBtnDiv").show(2000);
@@ -237,7 +240,42 @@ window.onload = function () {
 
     // reset function
     function reset() {
-        $("#mainContentDiv").html('<img src="assets/images/BattleBrainz.jpg" height="300" width="450">');
+        // hide/show visual DOM elements
+        $("#imageDiv").show(1000);
+        $("#instructionsBtnDiv").show(1000);
+        $("#startBtnDiv").show(1000);
+        $("#playAgainBtnDiv").hide(500);
+        $(".results").hide(500);
+
+        // reset vars to initial states
+        time = 100;
+
+        correctAnswers = 0;
+        incorrectAnswers = 0;
+        notAnswered = 0;
+    
+        // q1Ans = "";
+        // q2Ans = "";
+        // q3Ans = "";
+        // q4Ans = "";
+        // q5Ans = "";
+        // q6Ans = "";
+        // q7Ans = "";
+        // q8Ans = "";
+        // q9Ans = "";
+        // q10Ans = "";
+    
+        // set radio buttons to be unchecked
+        $('input[name="q1"]').prop('checked', false);
+        $('input[name="q2"]').prop('checked', false);
+        $('input[name="q3"]').prop('checked', false);
+        $('input[name="q4"]').prop('checked', false);
+        $('input[name="q5"]').prop('checked', false);
+        $('input[name="q6"]').prop('checked', false);
+        $('input[name="q7"]').prop('checked', false);
+        $('input[name="q8"]').prop('checked', false);
+        $('input[name="q9"]').prop('checked', false);
+        $('input[name="q10"]').prop('checked', false);
 
     }
 
@@ -245,7 +283,7 @@ window.onload = function () {
 
 
     // Modal functionality for the instructions button 
-    var modal = document.getElementById("instModal");
+    modal = document.getElementById("instModal");
     var modalBtn = document.getElementById("instructionsBtn");
     var span = document.getElementsByClassName("close")[0];
     modalBtn.onclick = function() {
