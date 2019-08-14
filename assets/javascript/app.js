@@ -1,6 +1,7 @@
 window.onload = function () {
-    // This will hide the questions section until the Start button is clicked - this is up top because I want to run this as soon as it can (after jQuery loads...)
+    // This will hide the questions section & play again btn until the Start button is clicked - this is up top because I want to run this as soon as it can (after jQuery loads...)
     $("#questionsDiv").hide();
+    $("#playAgainBtnDiv").hide();
 
 
     var correctAnswers = 0;
@@ -21,7 +22,7 @@ window.onload = function () {
     var q10Ans;
 
     // timer stuff
-    var time = 10;
+    var time = 100;
     var clockRunning = false;
     var outOfTime = false;
     var myTimer;
@@ -90,11 +91,11 @@ window.onload = function () {
     }
 
 
-    // test
+    // triggers fetch result function
     $("#submitBtn").on("click", getAnswers)
 
     
-
+    // Fetches all the results
     function getAnswers() {
         stopTimer();
         // for (var i = 1; i < 11; i++) {
@@ -207,17 +208,38 @@ window.onload = function () {
             incorrectAnswers += 1;
         }
 
-
-
         console.log("correct: " + correctAnswers);
         console.log("incorrect: " + incorrectAnswers);
         console.log("not answered: " + notAnswered);
 
+        var correct = $("<div>");
+        correct.addClass("correct").text("Correct Answers: " + correctAnswers);
+        $("#mainContentDiv").append(correct);
+
+        var incorrect = $("<div>");
+        incorrect.addClass("incorrect").text("Incorrect Answers: " + incorrectAnswers);
+        $("#mainContentDiv").append(incorrect);
+
+        var unAns = $("<div>");
+        unAns.addClass("incorrect").text("Unanswered: " + notAnswered);
+        $("#mainContentDiv").append(unAns);
+
+        var timeLeft = $("<div>");
+        timeLeft.addClass("timeleft").text("You had " + time + " seconds left! Great job!");
+        $("#mainContentDiv").append(timeLeft);
+
+        $("#playAgainBtnDiv").show(2000);
+        $("#playAgainBtn").on("click", reset);
+
+
     }
 
-    // this function will determine which questions were answered, if they were answered correctly and display the results
-    // $("")
 
+    // reset function
+    function reset() {
+        $("#mainContentDiv").html('<img src="assets/images/BattleBrainz.jpg" height="300" width="450">');
+
+    }
 
 
 
