@@ -1,12 +1,102 @@
+body {
+  font-size: 16px;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.5em;
+  background-image: url("../images/braintile.jpg");
+
+}
+
+/* Background overlay to make it more subtle */
+.opacityLayer {
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  /* top: 0;
+  left: 0; */
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
 
 
+.mainContainer {
+  background-color: linen;
+  text-align: center;
+  width: 100%;
+  max-width: 650px;
+  padding: 0.5rem;
+  margin: 2% auto;
+}
 
+.bold {
+  font-weight: bold;
+}
 
+.myRoundedCorners {
+  border-radius: 15px;
+}
 
+img {
+  border-radius: 15px;
+  box-shadow: rgba(0, 0, 0, 0.3) 3px 3px 12px 0px;}
 
+.mySmallRound {
+  border-radius: 5px;
+}
 
+.question {
+  padding: 2%;
+}
 
+.question:nth-child(odd) {
+  background-color: lightblue;
+}
 
+.question:nth-child(even) {
+  background-color: none;
+  }
+  
+
+.bigger-font {
+  font-size: 1.25em;
+}
+
+.timerContainer {
+  font-family: 'Concert One', cursive;
+  font-size: 3.5rem;
+  padding: 2% 0% 4% 0%;
+}
+
+.myButton {
+  color: rgb(0, 0, 0);
+  font-size: 1.25em; 
+  line-height: 1em; 
+  padding: 2%; 
+  border-radius: 15px; 
+  margin: 1% 0% 1% 0%;
+  /* font-family: Georgia, serif;  */
+  font-weight: bold; 
+  background-image: linear-gradient(rgb(173, 216, 230) 0%, rgb(44, 171, 255) 75%, rgb(173, 216, 230) 100%); 
+  box-shadow: rgba(0, 0, 0, 0.3) 3px 3px 12px 0px; 
+  border: 2px solid rgb(28, 110, 164); 
+  display: inline-block;}
+
+.myButton:hover {
+  background: #ADD8E6; 
+}
+
+.myButton:active {
+background: #ADD8E6; 
+}
+
+#titleDiv {
+  font-family: 'Slackey', cursive;
+  padding: 2%;
+
+}
+
+h1 {
+  font-size: 2.5rem;
+}
 
 
 /* The Modal (background) */
@@ -29,7 +119,8 @@
     margin: 15% auto; /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 50%; /* Could be more or less, depending on screen size */
+    width: 45%; /* Could be more or less, depending on screen size */
+
   }
   
   /* The Close Button */

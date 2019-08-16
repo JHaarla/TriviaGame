@@ -2,7 +2,7 @@ window.onload = function () {
     // This will hide the questions section & play again btn until the Start button is clicked - this is up top because I want to run this as soon as it can (after jQuery loads...)
     $("#questionsDiv").hide();
     $("#playAgainBtnDiv").hide();
-
+    $(".timerContainer").hide();
 
     var correctAnswers = 0;
     var incorrectAnswers = 0;
@@ -22,7 +22,7 @@ window.onload = function () {
     var q10Ans;
 
     // timer stuff
-    var time = 100;
+    var time = 91;
     var clockRunning = false;
     var outOfTime = false;
     var myTimer;
@@ -82,6 +82,7 @@ window.onload = function () {
 
         console.log("start game");
         // $("#mainContentDiv").html("");
+        $(".timerContainer").show(1000);
         $("#imageDiv").hide(1000);
         $("#instructionsBtnDiv").hide(1000);
         // $("#instructionsBtnDiv").html("");
@@ -216,19 +217,19 @@ window.onload = function () {
         console.log("not answered: " + notAnswered);
 
         var correct = $("<div>");
-        correct.addClass("results").text("Correct Answers: " + correctAnswers);
+        correct.addClass("results bold").text("Correct Answers: " + correctAnswers);
         $("#mainContentDiv").append(correct);
 
         var incorrect = $("<div>");
-        incorrect.addClass("results").text("Incorrect Answers: " + incorrectAnswers);
+        incorrect.addClass("results bold").text("Incorrect Answers: " + incorrectAnswers);
         $("#mainContentDiv").append(incorrect);
 
         var unAns = $("<div>");
-        unAns.addClass("results").text("Unanswered: " + notAnswered);
+        unAns.addClass("results bold").text("Unanswered: " + notAnswered);
         $("#mainContentDiv").append(unAns);
 
         var timeLeft = $("<div>");
-        timeLeft.addClass("results").text("You had " + time + " seconds left! Great job!");
+        timeLeft.addClass("results bold").text("You had " + time + " seconds left! Great job!");
         $("#mainContentDiv").append(timeLeft);
 
         $("#playAgainBtnDiv").show(2000);
@@ -248,7 +249,7 @@ window.onload = function () {
         $(".results").hide(500);
 
         // reset vars to initial states
-        time = 100;
+        time = 91;
 
         correctAnswers = 0;
         incorrectAnswers = 0;
