@@ -21,7 +21,7 @@ body {
 .mainContainer {
   background-color: linen;
   text-align: center;
-  width: 100%;
+  width: 95%;
   max-width: 650px;
   padding: 0.5rem;
   margin: 2% auto;
@@ -96,6 +96,17 @@ background: #ADD8E6;
 
 h1 {
   font-size: 2.5rem;
+  line-height: 2.5rem;
+}
+
+h5 {
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+}
+
+.titleImage {
+  width: 100%;
+  height: auto;
 }
 
 
