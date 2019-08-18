@@ -247,6 +247,7 @@ window.onload = function () {
         $("#startBtnDiv").show(1000);
         $("#playAgainBtnDiv").hide(500);
         $(".results").hide(500);
+        $(".timerContainer").hide();
 
         // reset vars to initial states
         time = 91;
