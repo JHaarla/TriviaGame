@@ -2,6 +2,8 @@
 
 This fun(ny) trivia game will test your general knowledge of the sligtly obscure. There is a time limit so dont take too long to think about your answers!
 
+Live deployment: https://jhaarla.github.io/TriviaGame/
+
 *__Under the Hood__*
 
 This game was built to demonstrate comprehension of the following web dev principles:
